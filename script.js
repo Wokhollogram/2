@@ -10,7 +10,7 @@ city1.name = 'ГородN';
 city1.population = '10 млн';
 let getName1 = () => {return city1.name}
 let exportStr1 = () => {return `name=${city1.name}\npopulation=${city1.population}\n`;}
-let getCity = () => {return }
+let getCity1 = () => {return getName1()};
 console.log(city1);
 
 // Создайте объект city2 через нотацию {name: "ГородM", population: 1e6}.
@@ -20,6 +20,7 @@ console.log(city2)
 
 // Создайте у объектов city1 и city2 методы getName(), которые вернут 
 // соответствующие названия городов.
+
 function getName() {return this.name;}
 city1.getName = getName;
 city2.getName = getName;
@@ -45,8 +46,8 @@ city2.exportStr = exportStr;
 // ссылается на getObj. Проверьте работу метода. Примечание: к объекту 
 // вызова можно обратиться через this..
 
-function getObj() {return this;}
-function getcity() {return getObj.apply(this).getName();}
+function  getObj() {return this;}
+function getCity() {return getObj.apply(this).getName();}
 city1.getCity = getCity;
 city2.getCity = getCity;
 console.log(city1.exportStr());
